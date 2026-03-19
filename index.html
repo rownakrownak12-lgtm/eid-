@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Special Surprise | Rownak</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Hind+Siliguri:wght@400;600&display=swap');
+
+        :root {
+            --bg: #12020a;
+            --gold: #fcc200;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+            background: radial-gradient(circle at 50% 50%, #2c061d 0%, #12020a 100%);
+            color: #fff;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; text-align: center; overflow: hidden;
+        }
+
+        .emoji { height: 22px; width: 22px; vertical-align: middle; margin: 0 3px; }
+
+        .screen {
+            display: none; width: 85%; max-width: 400px;
+            background: var(--glass); padding: 30px; border-radius: 40px;
+            backdrop-filter: blur(20px); border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+            animation: slideIn 0.6s ease-out;
+            max-height: 90vh; overflow-y: auto;
+        }
+
+        @keyframes slideIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        /* Local Image Style */
+        .premium-img { 
+            width: 100%; border-radius: 25px; 
+            margin-bottom: 20px; border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 { color: var(--gold); font-size: 1.6rem; margin-bottom: 15px; }
+        .wish-text { font-size: 1.05rem; line-height: 1.8; color: #eee; margin-bottom: 25px; text-align: justify; padding: 0 10px; }
+
+        .btn {
+            background: linear-gradient(45deg, var(--gold), #ffcc33);
+            color: #12020a; padding: 15px; border: none;
+            border-radius: 50px; font-size: 1.1rem; font-weight: 600;
+            cursor: pointer; width: 100%; transition: 0.3s;
+        }
+
+        .btn:hover { transform: scale(1.02); background: #fff; }
+
+        .rownak-text {
+            font-size: 14px; font-weight: 600; letter-spacing: 1px;
+            background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: rainbow 3s linear infinite; background-size: 200% auto;
+        }
+        @keyframes rainbow { to { background-position: 200% center; } }
+
+        #lock-screen { display: flex; flex-direction: column; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <div id="lock-screen" class="screen">
+        <div style="font-size: 50px; margin-bottom: 15px;">🔒</div>
+        <h1>অপেক্ষা করুন... <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2728.png" class="emoji"></h1>
+        <p>সারপ্রাইজটি শুধুমাত্র <b>শনিবার</b> ওপেন হবে।</p>
+        <button style="background:transparent; color:#555; border:none; cursor:pointer; font-size: 10px; margin-top:20px;" onclick="showScreen(1)">[ Admin Bypass ]</button>
+    </div>
+
+    <div id="screen-1" class="screen">
+        <img src="cat-salam.jpg" class="premium-img" alt="Salam Cat">
+        <h1>আসসালামু আলাইকুম! <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2728.png" class="emoji"></h1>
+        <button class="btn" onclick="showScreen(2)">ওয়ালাইকুম আসসালাম 👋</button>
+    </div>
+
+    <div id="screen-2" class="screen">
+        <img src="cat-funny.jpg" class="premium-img" alt="Funny Cat">
+        <h1>হুমমম... 🙄</h1>
+        <p>সালাম তো দিলেন, কিন্তু আমার <b>সালামি</b> কই? টাকা ছাড়া কি আর ঈদ হয়? <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4b8.png" class="emoji"></p>
+        <button class="btn" onclick="salamiLogic()">সালামি দিচ্ছি তো... ❤️</button>
+    </div>
+
+    <div id="screen-3" class="screen">
+        <img src="cat-eid.jpg" class="premium-img" alt="Eid Mubarak Cat">
+        <h1>ঈদ মোবারক! <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f319.png" class="emoji"></h1>
+        
+        <div class="wish-text">
+            পবিত্র ঈদের এই খুশির দিনে আপনার জীবন ভরে উঠুক অনাবিল আনন্দে। <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2728.png" class="emoji"> <br><br>
+            আকাশের ওই রুপালি চাঁদের হাসিতে ছড়িয়ে পড়ুক ভালোবাসা আপনার প্রতিটি কামনায়। গত বছরের সব দুঃখ-কষ্ট ভুলে নতুন দিনে নতুনভাবে শুরু হোক পথচলা। পরিবারের সবাইকে নিয়ে খুব ভালো কাটুক আপনার এবারের ঈদ। <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f319.png" class="emoji"><br><br>
+            আপনার দিনগুলো হোক বইয়ের গল্পের মতো সুন্দর আর প্রজাপতির মতো রঙিন। <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f98b.png" class="emoji"> অনেক অনেক দোয়া আর শুভকামনা রইল আপনার জন্য।
+        </div>
+        
+        <div style="margin-top:10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top:15px;">
+            <span class="rownak-text">Developed by Rownak</span>
+        </div>
+        <button class="btn" onclick="location.reload()" style="background:transparent; border:1px solid #fff; color:#fff; margin-top:20px;">আবার দেখুন 🔄</button>
+    </div>
+
+    <script>
+        function showScreen(num) {
+            document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+            document.getElementById('screen-' + num).style.display = 'block';
+        }
+
+        function salamiLogic() {
+            alert("থাক আর লাগবে না, অমনি বললাম 😂");
+            showScreen(3);
+        }
+
+        window.onload = () => {
+            const day = new Date().getDay();
+            if(day === 6) showScreen(1); // Saturday
+        };
+    </script>
+</body>
+</html>
